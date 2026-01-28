@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foodie Hub</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #ff4ecd;
+    }
+
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff4ecd;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 60px;
+      min-height: 90vh;
+    }
+
+    .hero-text {
+      max-width: 50%;
+    }
+
+    .hero-text h2 {
+      font-size: 52px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #ff4ecd, #8f8cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .hero-text button {
+      padding: 14px 35px;
+      background: linear-gradient(45deg, #ff4ecd, #8f8cff);
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hero-text button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 78, 205, 0.4);
+    }
+
+    .hero img {
+      width: 420px;
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    /* SECTION */
+    .section {
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #ff4ecd;
+    }
+
+    .section p {
+      color: #bbb;
+      margin-bottom: 50px;
+    }
+
+    /* MENU */
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
+    }
+
+    .menu-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: left;
+      backdrop-filter: blur(12px);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .menu-card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #ff4ecd, #8f8cff);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .menu-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .menu-card p {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 12px;
+    }
+
+    .price-rating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #8f8cff;
+    }
+
+    .rating {
+      background: #1abc9c;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 13px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* CTA */
+    .cta {
+      margin: 100px 60px;
+      padding: 60px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #8f8cff, #ff4ecd);
+      text-align: center;
+      color: #000;
+    }
+
+    .cta h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .cta button {
+      margin-top: 20px;
+      padding: 14px 35px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      padding: 30px;
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text {
+        max-width: 100%;
+      }
+
+      .hero img {
+        margin-top: 40px;
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Foodie Hub</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Menu</a>
+    <a href="#">Offers</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h2>Premium Food Experience<br>Delivered To You</h2>
+    <p>Discover top restaurants, exclusive offers, and lightning-fast delivery.</p>
+    <button>Explore Menu</button>
+  </div>
+  <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Food">
+</section>
+
+<section class="section">
+  <h2>Popular Near You</h2>
+  <p>Handpicked dishes loved by foodies</p>
+
+  <div class="menu">
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+      <span class="badge">BESTSELLER</span>
+      <h3>Cheese Burger</h3>
+      <p>Juicy grilled burger with premium cheese</p>
+      <div class="price-rating">
+        <span class="price">₹199</span>
+        <span class="rating">★ 4.5</span>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe">
+      <span class="badge">TRENDING</span>
+      <h3>Italian Pizza</h3>
+      <p>Stone-baked pizza with rich toppings</p>
+      <div class="price-rating">
+        <span class="price">₹299</span>
+        <span class="rating">★ 4.7</span>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80">
+      <span class="badge">CHEF'S PICK</span>
+      <h3>Creamy Pasta</h3>
+      <p>Authentic Italian creamy pasta</p>
+      <div class="price-rating">
+        <span class="price">₹249</span>
+        <span class="rating">★ 4.6</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Hungry? Let’s Fix That.</h2>
+  <p>Order now and enjoy exclusive discounts</p>
+  <button>Order Now</button>
+</section>
+
+<footer>
+  © 2026 Foodie Hub • Designed like a premium food app
+</footer>
+
+</body>
+</html>
